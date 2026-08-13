@@ -1,0 +1,22 @@
+{
+  "review_row_count": 2128605,
+  "unique_review_parent_asin_count": 94319,
+  "review_start_utc": "2000-10-23T14:37:23+00:00",
+  "review_end_utc": "2023-09-12T16:29:17.016000+00:00",
+  "empty_title_count": 0,
+  "empty_text_count": 2065,
+  "invalid_timestamp_count": 0,
+  "duplicate_candidate_count": 22657,
+  "rating_counts": {
+    "1.0": 250453,
+    "2.0": 79664,
+    "3.0": 104047,
+    "4.0": 208216,
+    "5.0": 1486225
+  },
+  "metadata_row_count": 94327,
+  "unique_metadata_parent_asin_count": 94327,
+  "metadata_missing_parent_asin_count": 0,
+  "matched_parent_asin_count": 94319,
+  "metadata_match_rate": 1.0
+}

@@ -1,0 +1,9 @@
+﻿metric,value
+review_period_start_utc,2015-11-01T00:00:00+00:00
+review_period_end_utc,2023-03-31T23:59:59+00:00
+raw_review_row_count,2128605
+review_rows_outside_period,295130
+duplicate_review_rows_removed,19115
+clean_review_row_count,1814360
+clean_metadata_product_count,94327
+duplicate_metadata_rows_removed,0

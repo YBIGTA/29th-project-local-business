@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "row_count": 68087,
+  "unique_product_count": 6613,
+  "analysis_start": "2016-01",
+  "analysis_end": "2023-02",
+  "positive_count": 6448,
+  "positive_ratio": 0.094702,
+  "duplicate_product_month_row_count": 0,
+  "label_mismatch_count": 0,
+  "future_columns": [
+    "next_avg_rating",
+    "next_low_rating_count",
+    "next_low_rating_ratio",
+    "next_review_count",
+    "next_vs_past_3m_low_rating_change"
+  ]
+}

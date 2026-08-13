@@ -1,0 +1,6 @@
+next_low_rating_ratio_threshold,eligible_row_count,positive_count,positive_ratio
+0.1,83509,44773,0.5361
+0.2,83509,26926,0.3224
+0.3,83509,13780,0.165
+0.4,83509,8707,0.1043
+0.5,83509,4573,0.0548

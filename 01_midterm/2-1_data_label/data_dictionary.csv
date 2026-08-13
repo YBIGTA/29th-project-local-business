@@ -1,0 +1,19 @@
+﻿column_name,description,source,model_usage
+parent_asin,상품 대표 식별자,입력 키,사용
+year_month,기준 시점 t월,입력 키,사용
+review_count,t월 전체 리뷰 수,t월 집계,사용
+avg_rating,t월 평균 별점,t월 집계,사용
+low_rating_count,t월 1~2점 리뷰 수,t월 집계,사용
+low_rating_ratio,t월 1~2점 리뷰 비율,t월 집계,사용
+verified_purchase_ratio,t월 실제 구매 인증 리뷰 비율,t월 집계,사용
+mean_helpful_vote,t월 리뷰당 평균 도움 수,t월 집계,사용
+text_available_ratio,t월 본문이 있는 리뷰 비율,t월 집계,사용
+past_3m_review_count,t-2~t월 전체 리뷰 수,과거 집계,사용
+past_3m_low_rating_count,t-2~t월 1~2점 리뷰 수,과거 집계,사용
+past_3m_low_rating_ratio,t-2~t월 1~2점 리뷰 비율,과거 집계,사용
+next_review_count,t+1월 전체 리뷰 수,미래값,라벨 검증만
+next_avg_rating,t+1월 평균 별점,미래값,라벨 검증만
+next_low_rating_count,t+1월 1~2점 리뷰 수,미래값,라벨 검증만
+next_low_rating_ratio,t+1월 1~2점 리뷰 비율,미래값,라벨 검증만
+next_vs_past_3m_low_rating_change,다음 달과 직전 3개월 저평점 비율 차이,미래값 포함,라벨 검증만
+is_low_rating_surge,확정 위험 라벨(0/1),미래값으로 생성,예측 대상
