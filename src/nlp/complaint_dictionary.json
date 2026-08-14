@@ -1,0 +1,152 @@
+{
+  "version": "2026-08-14",
+  "description": "Amazon Appliances 리뷰 불만 토픽 사전. train 구간(2016-01~2020-12) 저평점/고평점 lift 분석으로 후보를 뽑고, 수동 검수로 확정했다. 원인 7개는 무엇이 잘못됐는지, 결과 5개는 그래서 무슨 일이 벌어졌는지를 나눈다.",
+  "notes": [
+    "순수 감정어(very disappointed, junk 등)는 불만의 종류를 알려주지 않아 제외했다. 서사 피처로 따로 다룬다.",
+    "월 이름은 lift 상위였으나 고장 시점 서사이므로 서사 피처로 옮겼다.",
+    "브랜드명은 특정 제조사 리뷰를 통째로 오분류시키므로 제외했다.",
+    "not fit, not work 같은 부정 결합은 정규화 단계에서 n't를 not으로 바꾼 덕에 잡힌다."
+  ],
+  "cause": {
+    "durability_failure": {
+      "label": "내구성 고장",
+      "description": "정상 사용 중 제품이 멈추거나 부서진 경우",
+      "terms": [
+        "broke", "broken", "breaks", "cracked", "snapped", "died",
+        "failed", "failure", "malfunction", "malfunctioned",
+        "burned out", "burnt out", "worn out", "wore out",
+        "stopped working", "quit working", "no longer works",
+        "not last", "did not last", "short lived",
+        "broke after", "broke within", "broke the first",
+        "failed after", "failed within", "died after",
+        "stopped after", "then stopped", "only worked", "lasted only",
+        "quit after", "went out", "gave out"
+      ]
+    },
+    "build_quality": {
+      "label": "제작 품질",
+      "description": "재질이나 마감이 부실한 경우",
+      "terms": [
+        "flimsy", "brittle", "fragile", "shoddy", "warped",
+        "poor quality", "bad quality", "low quality", "poorly made",
+        "cheaply made", "feels cheap", "cheap plastic", "thin plastic",
+        "very thin", "too thin", "not durable", "inferior",
+        "loose weave", "poor construction", "sub standard"
+      ]
+    },
+    "incompatibility": {
+      "label": "호환 및 규격",
+      "description": "크기나 규격이 맞지 않는 경우",
+      "terms": [
+        "not fit", "will not fit", "would not fit", "did not fit",
+        "does not fit", "wont fit", "not compatible", "incompatible",
+        "wrong size", "wrong part", "wrong plug", "wrong fit",
+        "too small", "too large", "too big", "too short", "too tall",
+        "not the same size", "not match", "does not match",
+        "not universal", "incorrect"
+      ]
+    },
+    "performance": {
+      "label": "성능 미달",
+      "description": "작동은 하지만 제 기능을 못 하는 경우",
+      "terms": [
+        "not work", "does not work", "did not work", "doesnt work",
+        "barely works", "hardly works", "does nothing", "useless",
+        "ineffective", "poor performance", "not effective",
+        "reduced flow", "low pressure", "no suction", "weak suction",
+        "not cold", "not cooling", "not heating", "not drying",
+        "does not clean", "not clean", "takes forever", "trickle",
+        "too slow", "not enough ice", "weak coffee"
+      ]
+    },
+    "leak_damage": {
+      "label": "누수 및 파손 피해",
+      "description": "물이 새거나 그로 인한 피해가 생긴 경우",
+      "terms": [
+        "leak", "leaks", "leaked", "leaking", "leakage",
+        "dripping", "seeping", "puddle", "water damage",
+        "flooded", "spilled everywhere", "leaked everywhere",
+        "started leaking", "began to leak", "filter leaked"
+      ]
+    },
+    "water_taste_filter": {
+      "label": "물맛 및 여과",
+      "description": "물이나 음료의 맛, 냄새, 여과 성능 문제",
+      "terms": [
+        "bad taste", "tastes bad", "terrible taste", "tastes terrible",
+        "awful taste", "tastes awful", "metallic taste", "chemical taste",
+        "chemical smell", "aftertaste", "undrinkable",
+        "smells bad", "tastes like tap", "like tap water",
+        "bad filter", "does not filter", "sediment", "black stuff"
+      ]
+    },
+    "shipping_packaging": {
+      "label": "배송 및 포장",
+      "description": "수령 시점에 이미 문제가 있던 경우",
+      "terms": [
+        "arrived broken", "arrived damaged", "arrived cracked",
+        "arrived bent", "arrived dented", "came damaged", "came broken",
+        "damaged in shipping", "damaged in transit", "box was damaged",
+        "poorly packaged", "not packaged", "crushed box",
+        "wrong item", "missing parts", "was missing", "used item"
+      ]
+    }
+  },
+  "consequence": {
+    "return_intent": {
+      "label": "반품 의사",
+      "description": "반품이나 교환을 했거나 하려는 경우",
+      "terms": [
+        "returned it", "returning it", "will be returning",
+        "had to return", "sent it back", "send it back",
+        "requested a return", "asked for a return", "return authorization",
+        "will return", "going to return", "returned them"
+      ]
+    },
+    "return_blocked": {
+      "label": "반품 차단",
+      "description": "반품하려 했으나 기간이나 정책 때문에 막힌 경우",
+      "terms": [
+        "return window", "return period", "return date",
+        "past the return", "outside the return", "missed the return",
+        "non returnable", "not returnable", "cannot return",
+        "restocking fee", "day warranty", "day window",
+        "too late", "stuck with", "eligible", "expired"
+      ]
+    },
+    "refund_warranty_cs": {
+      "label": "환불 보증 고객대응",
+      "description": "환불, 보증, 판매자 대응에 문제가 있는 경우",
+      "terms": [
+        "refund", "refunded", "my money back", "want my money",
+        "warranty", "warrantee", "out of warranty", "off warranty",
+        "would not honor", "wont honor", "will not honor",
+        "no response", "never responded", "no reply", "never replied",
+        "no support", "ghost company", "customer service",
+        "contacted the seller", "contacted the manufacturer"
+      ]
+    },
+    "misrepresentation": {
+      "label": "설명 불일치",
+      "description": "광고나 설명이 실제와 다른 경우",
+      "terms": [
+        "misleading", "misled", "false advertising", "falsely advertised",
+        "not as described", "not as advertised", "not what was described",
+        "inaccurate", "deceptive", "dishonest",
+        "fake", "knock off", "knockoff", "counterfeit",
+        "not genuine", "not authentic", "not oem", "scam"
+      ]
+    },
+    "purchase_warning": {
+      "label": "구매 경고",
+      "description": "다른 구매자에게 사지 말라고 경고하는 경우",
+      "terms": [
+        "do not buy", "dont buy", "do not purchase", "dont purchase",
+        "do not order", "save your money", "waste of money",
+        "wasted my money", "dont waste", "do not waste",
+        "buyer beware", "beware", "stay away", "avoid this",
+        "not recommend", "would not recommend", "not recommended"
+      ]
+    }
+  }
+}
