@@ -1,0 +1,13 @@
+﻿topic,n_reviewed,precision,precision_low_rating,precision_high_rating,gap
+water_taste_filter,25,0.52,0.667,0.385,0.282
+build_quality,25,0.56,0.833,0.308,0.525
+refund_warranty_cs,25,0.56,0.917,0.231,0.686
+misrepresentation,25,0.6,0.833,0.385,0.448
+shipping_packaging,25,0.6,0.75,0.462,0.288
+durability_failure,25,0.6,0.917,0.308,0.609
+performance,25,0.68,1.0,0.385,0.615
+leak_damage,25,0.68,1.0,0.385,0.615
+purchase_warning,25,0.72,1.0,0.462,0.538
+incompatibility,25,0.72,1.0,0.462,0.538
+return_intent,25,0.76,0.917,0.615,0.302
+return_blocked,25,0.76,0.833,0.692,0.141

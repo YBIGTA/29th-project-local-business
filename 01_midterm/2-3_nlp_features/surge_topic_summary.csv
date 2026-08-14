@@ -1,0 +1,13 @@
+﻿topic,topic_label,n_product_months,mean_delta,p90_delta,max_delta,n_surge,surge_ratio
+durability_failure,내구성 고장,49731,0.0021,0.1111,0.8,3064,0.0616
+incompatibility,호환 및 규격,49731,0.0007,0.0769,0.7857,1763,0.0355
+purchase_warning,구매 경고,49731,0.0011,0.0688,0.6526,1464,0.0294
+performance,성능 미달,49731,0.0011,0.0644,0.6,1433,0.0288
+build_quality,제작 품질,49731,0.0002,0.0373,0.6078,1107,0.0223
+refund_warranty_cs,환불 보증 고객대응,49731,0.0004,0.0344,0.6,940,0.0189
+leak_damage,누수 및 파손 피해,49731,0.0002,0.0171,0.6333,703,0.0141
+return_intent,반품 의사,49731,0.0001,0.0,0.4,440,0.0088
+misrepresentation,설명 불일치,49731,0.0,0.0,0.4286,313,0.0063
+shipping_packaging,배송 및 포장,49731,0.0,0.0,0.4,304,0.0061
+return_blocked,반품 차단,49731,0.0005,0.0,0.5,252,0.0051
+water_taste_filter,물맛 및 여과,49731,0.0,0.0,0.4,238,0.0048

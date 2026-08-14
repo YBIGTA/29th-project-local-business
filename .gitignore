@@ -12,3 +12,5 @@ data/processed/*
 !data/processed/.gitkeep
 models/
 outputs/
+이전/
+01_midterm/2-3_nlp_features/monthly_complaint_surge.csv
