@@ -1,2 +1,8 @@
 pandas==3.0.5
 pyarrow==25.0.1
+lightgbm==4.7.0
+matplotlib==3.11.1
+matplotlib-inline==0.2.2
+statsmodels==0.14.6
+scikit-learn==1.9.0
+numpy==2.5.2
