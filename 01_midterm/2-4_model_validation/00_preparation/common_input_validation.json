@@ -1,0 +1,39 @@
+{
+  "validation": "passed",
+  "labeled_rows": 68087,
+  "unique_products": 6613,
+  "analysis_start": "2016-01",
+  "analysis_end": "2023-02",
+  "key_duplicate_count": 0,
+  "label_positive_count": 6448,
+  "label_positive_rate": 0.094702,
+  "text_total_columns": 117,
+  "safe_text_feature_count": 105,
+  "safe_text_feature_count_by_family": {
+    "T_basic": 4,
+    "T_cause": 33,
+    "T_consequence": 25,
+    "T_cooc": 16,
+    "T_narrative": 21,
+    "T_reliability": 6
+  },
+  "split_counts": {
+    "test": 6046,
+    "train": 54813,
+    "valid": 7228
+  },
+  "forbidden_exact_columns": [
+    "is_low_rating_surge",
+    "next_avg_rating",
+    "next_low_rating_count",
+    "next_low_rating_ratio",
+    "next_review_count",
+    "next_vs_past_3m_low_rating_change"
+  ],
+  "forbidden_auto_title_columns": [
+    "auto_title_flag_delta",
+    "auto_title_flag_rate_p3",
+    "auto_title_flag_rate_t",
+    "auto_title_flag_rate_t_shrunk"
+  ]
+}
