@@ -1,0 +1,15 @@
+﻿column,family,axis,nonzero_ratio,corr_label,reason
+cause_topic_count_mean,T_cause,level,0.6101,0.0711,any_cause_topic_rate_t와 순위상관 0.9920. 비율 쪽을 남김
+consequence_topic_count_mean,T_consequence,level,0.33,0.0462,any_consequence_topic_rate_t와 순위상관 0.9984. 비율 쪽을 남김
+cooc_durability_blocked_rate_t_shrunk,T_cooc,level,1.0,0.0896,정형 피처 중복. review_count와 순위상관 0.9510
+cooc_durability_return_rate_t_shrunk,T_cooc,level,1.0,0.0893,정형 피처 중복. review_count와 순위상관 0.9616
+cooc_shipping_return_delta,T_cooc,change,0.0085,0.0015,준상수. 단일값이 99.15%를 차지
+cooc_shipping_return_rate_p3,T_cooc,change,0.0063,-0.005,준상수. 단일값이 99.37%를 차지
+cooc_shipping_return_rate_t,T_cooc,level,0.0023,-0.0043,준상수. 단일값이 99.77%를 차지
+cooc_shipping_return_rate_t_shrunk,T_cooc,level,0.9998,0.0867,정형 피처 중복. review_count와 순위상관 0.9914
+emotional_count_mean,T_narrative,level,0.2727,0.0352,emotional_flag_rate_t와 순위상관 0.9979. 비율 쪽을 남김
+has_text_p3,T_reliability,static,0.9935,0.0024,준상수. 단일값이 99.35%를 차지
+has_text_t,T_reliability,static,1.0,,상수. 고유값 1개로 변별력 없음
+n_reviews_p3,T_reliability,static,0.9935,-0.0787,past_3m_review_count와 순위상관 0.9384. 2-2가 corr 0.940 기준으로 past_3m_review_count를 제외했으므로 동일 기준 적용
+n_reviews_t,T_reliability,static,1.0,-0.088,정형 피처 중복. review_count와 순위상관 1.0000
+text_reliability,T_reliability,static,1.0,-0.088,정형 피처 중복. review_count와 순위상관 1.0000
