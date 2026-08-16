@@ -1,0 +1,96 @@
+{
+  "input_review_rows_after_text_filter": 1637596,
+  "product_month_rows": 68087,
+  "intensity_feature_count": 17,
+  "feature_columns": [
+    "intensity_review_count",
+    "intensity_score_mean_t",
+    "intensity_score_max_t",
+    "intensity_mild_issue_rate_t",
+    "intensity_severe_issue_rate_t",
+    "intensity_safety_risk_rate_t",
+    "intensity_severe_consequence_rate_t",
+    "intensity_mild_issue_rate_p3",
+    "intensity_mild_issue_rate_delta",
+    "intensity_severe_issue_rate_p3",
+    "intensity_severe_issue_rate_delta",
+    "intensity_safety_risk_rate_p3",
+    "intensity_safety_risk_rate_delta",
+    "intensity_severe_consequence_rate_p3",
+    "intensity_severe_consequence_rate_delta",
+    "intensity_score_mean_p3",
+    "intensity_score_mean_delta"
+  ],
+  "review_level_match_rates": {
+    "intensity_mild_issue_flag": 0.0055770776186556395,
+    "intensity_severe_issue_flag": 0.0031582881247877986,
+    "intensity_safety_risk_flag": 0.010967906614329786,
+    "intensity_severe_consequence_flag": 0.03089345601723502
+  },
+  "train_label_association": {
+    "intensity_score_mean_t": {
+      "negative_mean": 0.0910158018231091,
+      "positive_mean": 0.14569044449444207
+    },
+    "intensity_score_max_t": {
+      "negative_mean": 0.6073942253859074,
+      "positive_mean": 0.7229743803374297
+    },
+    "intensity_mild_issue_rate_t": {
+      "negative_mean": 0.004769367157566711,
+      "positive_mean": 0.005965747335254826
+    },
+    "intensity_severe_issue_rate_t": {
+      "negative_mean": 0.0029035869629635727,
+      "positive_mean": 0.003984259069941046
+    },
+    "intensity_safety_risk_rate_t": {
+      "negative_mean": 0.009820641573436723,
+      "positive_mean": 0.01449792780633558
+    },
+    "intensity_severe_consequence_rate_t": {
+      "negative_mean": 0.025488668009652535,
+      "positive_mean": 0.0441311978001492
+    },
+    "intensity_mild_issue_rate_p3": {
+      "negative_mean": 0.004783750909911442,
+      "positive_mean": 0.006924194168562886
+    },
+    "intensity_mild_issue_rate_delta": {
+      "negative_mean": -1.438375234473098e-05,
+      "positive_mean": -0.0009584468333080585
+    },
+    "intensity_severe_issue_rate_p3": {
+      "negative_mean": 0.002736875474287797,
+      "positive_mean": 0.003929245187622143
+    },
+    "intensity_severe_issue_rate_delta": {
+      "negative_mean": 0.000166711488675775,
+      "positive_mean": 5.5013882318903516e-05
+    },
+    "intensity_safety_risk_rate_p3": {
+      "negative_mean": 0.009567731258253907,
+      "positive_mean": 0.012967365300393845
+    },
+    "intensity_safety_risk_rate_delta": {
+      "negative_mean": 0.0002529103151828161,
+      "positive_mean": 0.0015305625059417354
+    },
+    "intensity_severe_consequence_rate_p3": {
+      "negative_mean": 0.024638820022206992,
+      "positive_mean": 0.0400212529775954
+    },
+    "intensity_severe_consequence_rate_delta": {
+      "negative_mean": 0.0008498479874455436,
+      "positive_mean": 0.0041099448225538
+    },
+    "intensity_score_mean_p3": {
+      "negative_mean": 0.08823833567766276,
+      "positive_mean": 0.1337272864001795
+    },
+    "intensity_score_mean_delta": {
+      "negative_mean": 0.002777466145446354,
+      "positive_mean": 0.011963158094262554
+    }
+  }
+}
