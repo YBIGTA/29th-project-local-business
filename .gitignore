@@ -14,3 +14,9 @@ models/
 outputs/
 이전/
 01_midterm/2-3_nlp_features/monthly_complaint_surge.csv
+
+# 개인 작업 파일 (2-4)
+_send/
+*.pdf
+docs/*.docx
+amazon_project_parquet*
