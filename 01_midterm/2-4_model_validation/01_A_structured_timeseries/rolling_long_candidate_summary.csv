@@ -1,0 +1,3 @@
+﻿model_name,pr_auc_mean,pr_auc_std,roc_auc_mean,recall_at_10pct_mean,pr_auc_wins
+baseline_existing_3m,0.17565375,0.011348545204121985,0.66185975,0.18052525,0
+candidate_long_1_3_6_12m,0.2186835,0.011888289321849469,0.7063155,0.228223,4

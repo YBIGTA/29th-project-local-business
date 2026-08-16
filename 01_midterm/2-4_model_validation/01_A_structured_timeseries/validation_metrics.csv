@@ -1,0 +1,5 @@
+﻿model_name,split,pr_auc,roc_auc,recall_at_5pct,recall_at_10pct,n_rows,positive_rate,feature_count,random_state
+timeseries_lightgbm,valid,0.183023,0.637432,0.077088,0.16167,7228,0.12922,10,42
+current_state_lightgbm,valid,0.168068,0.607078,0.074946,0.133833,7228,0.12922,7,42
+current_state_logistic,valid,0.161464,0.60015,0.06531,0.12848,7228,0.12922,7,42
+timeseries_logistic,valid,0.160745,0.606055,0.058887,0.119914,7228,0.12922,10,42

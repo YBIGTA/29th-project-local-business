@@ -1,0 +1,11 @@
+﻿column,dtype
+parent_asin,str
+year_month,str
+review_count,int64
+avg_rating,float64
+low_rating_count,int64
+low_rating_ratio,float64
+verified_purchase_ratio,float64
+mean_helpful_vote,float64
+text_available_ratio,float64
+month_code,int64
