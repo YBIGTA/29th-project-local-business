@@ -1,0 +1,21 @@
+{
+  "test_data_used": false,
+  "target_period": "2016-01~2022-08",
+  "target_rows": 62041,
+  "target_unique_products": 6050,
+  "activity_rows": 701713,
+  "activity_unique_products": 92103,
+  "current_target_activity_key_match_rate": 1.0,
+  "activity_columns": [
+    "parent_asin",
+    "year_month",
+    "review_count",
+    "avg_rating",
+    "low_rating_count",
+    "low_rating_ratio",
+    "verified_purchase_ratio",
+    "mean_helpful_vote",
+    "text_available_ratio",
+    "month_code"
+  ]
+}

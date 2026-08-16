@@ -1,0 +1,5 @@
+﻿window_months,target_rows,mean_active_months_in_window,rows_with_any_history,rate_with_any_history,rows_with_half_window_history,rate_with_half_window_history,rows_with_full_window_history,rate_with_full_window_history,rows_with_no_history,rate_with_no_history
+1,62041,0.9784,60703,0.978434,60703,0.978434,60703,0.978434,1338,0.021566
+3,62041,2.8508,61626,0.993311,60023,0.967473,55220,0.890057,415,0.006689
+6,62041,5.4589,61645,0.993617,58813,0.94797,47260,0.761754,396,0.006383
+12,62041,10.0683,61656,0.993794,54285,0.874986,35761,0.576409,385,0.006206

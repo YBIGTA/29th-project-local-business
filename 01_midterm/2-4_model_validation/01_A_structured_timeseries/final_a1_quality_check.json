@@ -1,0 +1,52 @@
+{
+  "panel_rows": 68087,
+  "history_rows": 62041,
+  "panel_key_duplicates": 0,
+  "history_key_duplicates": 0,
+  "current_feature_count": 7,
+  "history_feature_count": 38,
+  "final_feature_count": 45,
+  "forbidden_features_in_final_candidate": [],
+  "history_max_year_month": "2022-08",
+  "current_feature_mismatch_counts": {
+    "avg_rating": 0,
+    "low_rating_count": 0,
+    "low_rating_ratio": 0,
+    "mean_helpful_vote": 0,
+    "review_count": 0,
+    "text_available_ratio": 0,
+    "verified_purchase_ratio": 0
+  },
+  "history_feature_full_recalculation_mismatch_counts": {
+    "1m_review_count": 0,
+    "3m_review_count": 0,
+    "6m_review_count": 0,
+    "12m_review_count": 0,
+    "1m_low_rating_count": 0,
+    "3m_low_rating_count": 0,
+    "6m_low_rating_count": 0,
+    "12m_low_rating_count": 0,
+    "1m_low_rating_ratio": 0,
+    "3m_low_rating_ratio": 0,
+    "6m_low_rating_ratio": 0,
+    "12m_low_rating_ratio": 0,
+    "1m_avg_rating": 0,
+    "3m_avg_rating": 0,
+    "6m_avg_rating": 0,
+    "12m_avg_rating": 0
+  },
+  "validation_prediction_checks": {
+    "validation_predictions.csv": {
+      "rows": 28912,
+      "max_year_month": "2022-08",
+      "contains_test_period": false
+    },
+    "multiwindow_validation_predictions.csv": {
+      "rows": 28912,
+      "max_year_month": "2022-08",
+      "contains_test_period": false
+    }
+  },
+  "status": "PASSED",
+  "issues": []
+}

@@ -1,0 +1,17 @@
+﻿feature_name,dtype,missing_rate,n_unique,decision,feature_group,reason
+is_low_rating_surge,int8,0.0,2,exclude,excluded,라벨 또는 미래 결과
+next_avg_rating,float64,0.0,2732,exclude,excluded,라벨 또는 미래 결과
+next_low_rating_count,float64,0.0,79,exclude,excluded,라벨 또는 미래 결과
+next_low_rating_ratio,float64,0.0,1292,exclude,excluded,라벨 또는 미래 결과
+next_review_count,float64,0.0,252,exclude,excluded,라벨 또는 미래 결과
+next_vs_past_3m_low_rating_change,float64,0.0,16463,exclude,excluded,라벨 또는 미래 결과
+avg_rating,float64,0.0,2721,use,current_state,예측 시점 현재 상태의 정형 피처
+low_rating_count,int64,0.0,79,use,current_state,예측 시점 현재 상태의 정형 피처
+low_rating_ratio,float64,0.0,1289,use,current_state,예측 시점 현재 상태의 정형 피처
+mean_helpful_vote,float64,0.0,3618,use,current_state,예측 시점 현재 상태의 정형 피처
+review_count,int64,0.0,256,use,current_state,예측 시점 현재 상태의 정형 피처
+text_available_ratio,float64,0.0,142,use,current_state,예측 시점 현재 상태의 정형 피처
+verified_purchase_ratio,float64,0.0,721,use,current_state,예측 시점 현재 상태의 정형 피처
+past_3m_low_rating_count,float64,0.0,166,use,timeseries_trend,과거 누적·변화·윈도우 기반 정형 피처
+past_3m_low_rating_ratio,float64,0.0,3712,use,timeseries_trend,과거 누적·변화·윈도우 기반 정형 피처
+past_3m_review_count,float64,0.0,558,use,timeseries_trend,과거 누적·변화·윈도우 기반 정형 피처

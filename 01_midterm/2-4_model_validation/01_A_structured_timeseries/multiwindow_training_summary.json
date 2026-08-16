@@ -1,0 +1,15 @@
+{
+  "test_data_used": false,
+  "train_period": "~2021-12",
+  "valid_period": "2022-01~2022-08",
+  "excluded_test_period": "2022-09~2023-02",
+  "train_rows": 54813,
+  "valid_rows": 7228,
+  "scale_pos_weight_train_only": 10.416996,
+  "feature_counts": {
+    "baseline_existing_3m": 10,
+    "candidate_short_1_3m": 25,
+    "candidate_medium_1_3_6m": 35,
+    "candidate_long_1_3_6_12m": 45
+  }
+}

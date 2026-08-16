@@ -1,0 +1,13 @@
+{
+  "source": "data/processed/product_month_labeled.parquet",
+  "rows": 68087,
+  "unique_products": 6613,
+  "key_duplicate_count": 0,
+  "positive_count": 6448,
+  "positive_rate": 0.094702,
+  "current_state_feature_count": 7,
+  "timeseries_trend_feature_count": 3,
+  "total_structured_feature_count": 10,
+  "excluded_column_count": 6,
+  "forbidden_feature_in_use": []
+}
