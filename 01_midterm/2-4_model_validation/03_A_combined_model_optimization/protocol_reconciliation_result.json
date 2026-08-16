@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "test_data_used": false,
+  "common_subsample_freq": 1,
+  "official_A_pr_auc": 0.231104,
+  "reproduced_stage4_pr_auc": 0.2311036404883197,
+  "reproduced_stage5_pr_auc": 0.2311036404883197,
+  "stage4_stage5_baseline_identical": true
+}

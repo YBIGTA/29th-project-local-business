@@ -1,0 +1,25 @@
+{
+  "test_data_used": false,
+  "input_rows": 62041,
+  "split_counts": {
+    "train": 54813,
+    "valid": 7228
+  },
+  "baseline_model": "I0_reproduce_D_S45_plus_change_all",
+  "baseline_pr_auc": 0.23363021521873797,
+  "intensity_feature_count": 17,
+  "current_intensity_features": [
+    "intensity_score_mean_t",
+    "intensity_score_max_t",
+    "intensity_safety_risk_rate_t",
+    "intensity_severe_consequence_rate_t"
+  ],
+  "change_intensity_features": [
+    "intensity_score_mean_delta",
+    "intensity_safety_risk_rate_delta",
+    "intensity_severe_consequence_rate_delta",
+    "intensity_severe_issue_rate_delta"
+  ],
+  "best_model": "I0_reproduce_D_S45_plus_change_all",
+  "best_pr_auc": 0.23363021521873797
+}

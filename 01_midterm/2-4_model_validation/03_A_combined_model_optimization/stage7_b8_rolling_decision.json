@@ -1,0 +1,21 @@
+{
+  "test_data_used": false,
+  "candidate": "OOF_blend_B8",
+  "comparison": "S45_structured_only",
+  "fixed_oof_weight": {
+    "structured": 0.8,
+    "text_B8": 0.2
+  },
+  "primary_metric": "pr_auc",
+  "windows": [
+    "2019",
+    "2020",
+    "2021",
+    "2022-01~08"
+  ],
+  "mean_pr_auc_delta": 0.002064194732952232,
+  "pr_auc_win_count": 4,
+  "required_win_count": 3,
+  "passed_rolling_stability": true,
+  "next_step": "single_final_test_evaluation"
+}

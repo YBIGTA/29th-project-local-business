@@ -1,0 +1,98 @@
+{
+  "test_data_used": false,
+  "selection_stage": "intensity_feature_valid_screen",
+  "primary_metric": "valid_pr_auc",
+  "baseline_model": "I0_reproduce_D_S45_plus_change_all",
+  "baseline_pr_auc": 0.2336302152187379,
+  "intensity_candidates": [
+    {
+      "model_name": "I2_best_plus_intensity_change",
+      "pr_auc": 0.2313502257613107,
+      "pr_auc_vs_baseline": -0.0022799894574272,
+      "feature_count": 91,
+      "intensity_feature_count": 4
+    },
+    {
+      "model_name": "I3_best_plus_intensity_all17",
+      "pr_auc": 0.2299883822897463,
+      "pr_auc_vs_baseline": -0.0036418329289916,
+      "feature_count": 104,
+      "intensity_feature_count": 17
+    },
+    {
+      "model_name": "I1_best_plus_intensity_current",
+      "pr_auc": 0.2271241062195154,
+      "pr_auc_vs_baseline": -0.0065061089992225,
+      "feature_count": 91,
+      "intensity_feature_count": 4
+    }
+  ],
+  "decision": "exclude_intensity_from_oof_stacking",
+  "reason": "모든 강도 후보가 기존 최고 PR-AUC를 넘지 못했고, 가장 가까운 변화 후보도 -0.002280으로 성능 우위가 없으며 피처 수가 더 많음.",
+  "oof_stage5_summary": {
+    "test_data_used": false,
+    "oof_is_time_ordered": true,
+    "official_valid_used_for_weight_selection": false,
+    "folds": [
+      {
+        "fold": "oof_2019",
+        "train_end": "2018-12",
+        "valid_start": "2019-01",
+        "valid_end": "2019-12",
+        "train_rows": 19996,
+        "oof_rows": 10697,
+        "train_positive_rate": 0.07366473294658932,
+        "oof_positive_rate": 0.07319809292324951
+      },
+      {
+        "fold": "oof_2020",
+        "train_end": "2019-12",
+        "valid_start": "2020-01",
+        "valid_end": "2020-12",
+        "train_rows": 30693,
+        "oof_rows": 11501,
+        "train_positive_rate": 0.07350210145635813,
+        "oof_positive_rate": 0.09564385705590818
+      },
+      {
+        "fold": "oof_2021",
+        "train_end": "2020-12",
+        "valid_start": "2021-01",
+        "valid_end": "2021-12",
+        "train_rows": 42194,
+        "oof_rows": 12619,
+        "train_positive_rate": 0.07953737498222496,
+        "oof_positive_rate": 0.11450986607496633
+      }
+    ],
+    "stacking": {
+      "change_all": {
+        "text_feature_count": 42,
+        "oof_rows": 34817,
+        "selected_structured_weight": 0.8500000000000001,
+        "selected_text_weight": 0.1499999999999999,
+        "oof_blend_pr_auc": 0.19623028411717444,
+        "stack_scaled_logit_coefficients": {
+          "structured": 1.0025844585228276,
+          "text": 0.1574719617884562
+        },
+        "stack_intercept": -2.616475508711557
+      },
+      "B8": {
+        "text_feature_count": 72,
+        "oof_rows": 34817,
+        "selected_structured_weight": 0.8,
+        "selected_text_weight": 0.19999999999999996,
+        "oof_blend_pr_auc": 0.1968794023736148,
+        "stack_scaled_logit_coefficients": {
+          "structured": 0.9840079257481607,
+          "text": 0.18081418455679507
+        },
+        "stack_intercept": -2.618847448801892
+      }
+    },
+    "total_training_seconds": 27.967,
+    "selection_is_final": false,
+    "next_required_check": "제한적 튜닝 후 롤링 시간 안정성 검증"
+  }
+}

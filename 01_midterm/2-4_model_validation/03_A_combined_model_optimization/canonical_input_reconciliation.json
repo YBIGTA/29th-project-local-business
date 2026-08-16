@@ -1,0 +1,18 @@
+{
+  "test_data_used": false,
+  "canonical_source_order": "structured_modeling_panel left merge multiwindow_history_features_pretest",
+  "canonical_native_dtype_preserved": true,
+  "rows": 62041,
+  "split_counts": {
+    "train": 54813,
+    "valid": 7228
+  },
+  "structured_feature_count": 45,
+  "text_union_count": 87,
+  "structured_value_mismatch_count": 0,
+  "label_mismatch_count": 0,
+  "past_p3_count": 21,
+  "delta_count": 21,
+  "past_p3_sha256": "00e859f471135ffa155b4ae0e0c2fdcfbdfa30573bd04349d0631715c554b8d5",
+  "delta_sha256": "90f194458bdd47bea29b292fef4742cf4a63ab3d0906408dd148df60630d0498"
+}

@@ -148,6 +148,7 @@ B는 A의 1일 차 결과를 기다리지 않고 다음 3개를 최소 정형 �
 | num_leaves | 15 |
 | min_child_samples | 50 |
 | subsample | 0.80 |
+| `subsample_freq` | 1 |
 | colsample_bytree | 0.80 |
 | reg_lambda | 1.0 |
 | random_state | 42 |

@@ -1,0 +1,29 @@
+{
+  "declared_before_training": true,
+  "primary_metric": "pr_auc",
+  "secondary_metrics": [
+    "recall_at_5pct",
+    "recall_at_10pct",
+    "roc_auc"
+  ],
+  "candidate_models": [
+    "C1_S45_plus_B1",
+    "C5_S45_plus_B5",
+    "C8_S45_plus_B8"
+  ],
+  "diagnostic_models": [
+    "D_S45_plus_past_p3",
+    "D_S45_plus_delta",
+    "D_S45_plus_change_all"
+  ],
+  "rules": [
+    "결합 후보는 S45_structured_only보다 Valid PR-AUC가 높아야 한다.",
+    "B1, B5, B8은 동일한 Train/Valid와 동일한 LightGBM 설정으로 비교한다.",
+    "PR-AUC 차이가 0.003 이하라면 더 적은 피처를 우선한다.",
+    "B5는 B1보다 PR-AUC 0.003 이상 또는 Recall@10% 0.01 이상 개선되어야 복잡성을 정당화한다.",
+    "B8은 최고 후보와 PR-AUC 차이가 0.005 이내이거나 Recall@5%가 0.01 이상 좋을 때 유지한다.",
+    "분해 모델은 텍스트 현재·과거·변화 정보의 역할 확인용이며 최종 후보로 바로 선택하지 않는다.",
+    "최종 후보 확정에는 이후 롤링 검증 평균 개선 양수와 최소 3/4 구간 승리가 필요하다.",
+    "Test 2022-09~2023-02는 사용하지 않는다."
+  ]
+}

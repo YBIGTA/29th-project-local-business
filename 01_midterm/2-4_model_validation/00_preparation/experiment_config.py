@@ -71,6 +71,7 @@ LIGHTGBM_PARAMS = {
     "num_leaves": 15,
     "min_child_samples": 50,
     "subsample": 0.80,
+    "subsample_freq": 1,
     "colsample_bytree": 0.80,
     "reg_lambda": 1.0,
     "random_state": 42,

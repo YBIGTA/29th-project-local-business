@@ -1,0 +1,20 @@
+{
+  "test_data_used": false,
+  "experiment_goal": "텍스트 정보를 더 작고 안정적으로 활용하여 정형 S45 대비 시간 순 일반화 성능을 높일 수 있는지 검증",
+  "candidate_count": 30,
+  "selection_periods": [
+    "2019",
+    "2020",
+    "2021"
+  ],
+  "confirmation_period": "2022-01~08",
+  "eligibility_rule": {
+    "pre_mean_pr_auc_delta_positive": true,
+    "pre_pr_auc_wins_required": "at least 2 of 3",
+    "official_valid_delta_positive": true
+  },
+  "selected_candidate": "monthly_rank_B1",
+  "selection_is_final_before_test": true,
+  "next_step": "lock_selected_text_strategy_then_single_test",
+  "elapsed_seconds": 104.96
+}

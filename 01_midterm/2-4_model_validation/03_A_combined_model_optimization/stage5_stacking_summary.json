@@ -1,0 +1,66 @@
+{
+  "test_data_used": false,
+  "oof_is_time_ordered": true,
+  "official_valid_used_for_weight_selection": false,
+  "folds": [
+    {
+      "fold": "oof_2019",
+      "train_end": "2018-12",
+      "valid_start": "2019-01",
+      "valid_end": "2019-12",
+      "train_rows": 19996,
+      "oof_rows": 10697,
+      "train_positive_rate": 0.07366473294658932,
+      "oof_positive_rate": 0.07319809292324951
+    },
+    {
+      "fold": "oof_2020",
+      "train_end": "2019-12",
+      "valid_start": "2020-01",
+      "valid_end": "2020-12",
+      "train_rows": 30693,
+      "oof_rows": 11501,
+      "train_positive_rate": 0.07350210145635813,
+      "oof_positive_rate": 0.09564385705590818
+    },
+    {
+      "fold": "oof_2021",
+      "train_end": "2020-12",
+      "valid_start": "2021-01",
+      "valid_end": "2021-12",
+      "train_rows": 42194,
+      "oof_rows": 12619,
+      "train_positive_rate": 0.07953737498222496,
+      "oof_positive_rate": 0.11450986607496633
+    }
+  ],
+  "stacking": {
+    "change_all": {
+      "text_feature_count": 42,
+      "oof_rows": 34817,
+      "selected_structured_weight": 0.8500000000000001,
+      "selected_text_weight": 0.1499999999999999,
+      "oof_blend_pr_auc": 0.1979450093175853,
+      "stack_scaled_logit_coefficients": {
+        "structured": 1.0111826933460009,
+        "text": 0.1459202308002596
+      },
+      "stack_intercept": -2.6177734041346916
+    },
+    "B8": {
+      "text_feature_count": 72,
+      "oof_rows": 34817,
+      "selected_structured_weight": 0.8,
+      "selected_text_weight": 0.19999999999999996,
+      "oof_blend_pr_auc": 0.19796965372277975,
+      "stack_scaled_logit_coefficients": {
+        "structured": 0.9932040075645011,
+        "text": 0.17107911263503245
+      },
+      "stack_intercept": -2.620558781425486
+    }
+  },
+  "total_training_seconds": 27.115,
+  "selection_is_final": false,
+  "next_required_check": "제한적 튜닝 후 롤링 시간 안정성 검증"
+}

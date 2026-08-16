@@ -1,0 +1,15 @@
+{
+  "full_rows": 68087,
+  "split_counts": {
+    "train": 54813,
+    "valid": 7228,
+    "test": 6046
+  },
+  "test_period": [
+    "2022-09",
+    "2023-02"
+  ],
+  "history_pretest_values_identical": true,
+  "canonical_pretest_values_identical": true,
+  "test_data_used_before_evaluation": false
+}
