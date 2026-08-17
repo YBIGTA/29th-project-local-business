@@ -1,0 +1,80 @@
+{
+  "stage": "6_of_8",
+  "goal": "원문 리뷰의 현재 위험도와 상품 자신의 과거 위험도·표현 차이를 비교",
+  "uses_fixed_topic_features": false,
+  "uses_s45_features": false,
+  "test_data_used": false,
+  "review_model_history_source": "5_of_8 review-level character n-gram risk model",
+  "history_windows_months": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "novelty_definition": "1 - 현재 월 문서와 직전 활성 월 문서의 TF-IDF cosine similarity",
+  "pretest_rows": 62041,
+  "valid_rows": 7228,
+  "valid_metrics": [
+    {
+      "signal_name": "current_review_risk_mean",
+      "pr_auc": 0.1760344233171407,
+      "roc_auc": 0.6026255248702241,
+      "recall_at_5pct": 0.08137044967880086,
+      "recall_at_10pct": 0.17558886509635974,
+      "missing_rate": 0.000138
+    },
+    {
+      "signal_name": "current_review_risk_max",
+      "pr_auc": 0.15458891096309482,
+      "roc_auc": 0.562080129337005,
+      "recall_at_5pct": 0.069593147751606,
+      "recall_at_10pct": 0.13704496788008566,
+      "missing_rate": 0.000138
+    },
+    {
+      "signal_name": "review_risk_delta_vs_3m",
+      "pr_auc": 0.1444584685279565,
+      "roc_auc": 0.5205867183252599,
+      "recall_at_5pct": 0.06638115631691649,
+      "recall_at_10pct": 0.1252676659528908,
+      "missing_rate": 0.008578
+    },
+    {
+      "signal_name": "review_risk_delta_vs_1m",
+      "pr_auc": 0.14206373944598283,
+      "roc_auc": 0.5237063407657203,
+      "recall_at_5pct": 0.057815845824411134,
+      "recall_at_10pct": 0.1252676659528908,
+      "missing_rate": 0.019784
+    },
+    {
+      "signal_name": "review_risk_delta_vs_12m",
+      "pr_auc": 0.14053453086874954,
+      "roc_auc": 0.5175868523708722,
+      "recall_at_5pct": 0.057815845824411134,
+      "recall_at_10pct": 0.11884368308351177,
+      "missing_rate": 0.008163
+    },
+    {
+      "signal_name": "review_risk_delta_vs_6m",
+      "pr_auc": 0.14044416826704942,
+      "roc_auc": 0.5169651052734361,
+      "recall_at_5pct": 0.061027837259100645,
+      "recall_at_10pct": 0.1145610278372591,
+      "missing_rate": 0.008439
+    },
+    {
+      "signal_name": "text_novelty_vs_prev_active_month",
+      "pr_auc": 0.13636029500810917,
+      "roc_auc": 0.5205404487738229,
+      "recall_at_5pct": 0.05139186295503212,
+      "recall_at_10pct": 0.10706638115631692,
+      "missing_rate": 0.073326
+    }
+  ],
+  "outputs": {
+    "signals": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/temporal_raw_text_change_signals_pretest.parquet",
+    "metrics": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/temporal_raw_text_change_metrics_valid.csv"
+  },
+  "elapsed_seconds": 208.36
+}

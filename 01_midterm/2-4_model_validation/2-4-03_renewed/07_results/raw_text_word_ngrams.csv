@@ -1,0 +1,81 @@
+﻿direction,ngram,coefficient
+risk_increasing,nespresso,2.9765337
+risk_increasing,clean,2.7731607
+risk_increasing,honeywell,2.7718806
+risk_increasing,maybe even,2.5906115
+risk_increasing,so am,2.4940205
+risk_increasing,product easy,2.4418204
+risk_increasing,burned,2.411233
+risk_increasing,quickly but,2.3787162
+risk_increasing,fine for,2.3746026
+risk_increasing,this ice,2.3188791
+risk_increasing,open,2.3066795
+risk_increasing,material quality,2.2808342
+risk_increasing,big,2.240073
+risk_increasing,review not,2.226778
+risk_increasing,install perfect,2.2185168
+risk_increasing,runs,2.2145557
+risk_increasing,unfortunately,2.209437
+risk_increasing,not worth,2.2068136
+risk_increasing,once,2.2064238
+risk_increasing,to other,2.205072
+risk_increasing,work but,2.1515858
+risk_increasing,but not,2.1460865
+risk_increasing,fine but,2.1354969
+risk_increasing,ice makers,2.1039271
+risk_increasing,excellent filter,2.0758948
+risk_increasing,install did,2.067063
+risk_increasing,temperature,2.0616791
+risk_increasing,review washer,2.0614774
+risk_increasing,worked great,2.0614092
+risk_increasing,disposable,2.055776
+risk_increasing,stars good,2.0495174
+risk_increasing,parts were,2.0459707
+risk_increasing,white dust,2.0355403
+risk_increasing,to,2.0246823
+risk_increasing,happy to,2.0178962
+risk_increasing,installed this,2.006345
+risk_increasing,at reasonable,2.0008128
+risk_increasing,the,1.9997041
+risk_increasing,really good,1.9953623
+risk_increasing,it fixed,1.9803057
+risk_decreasing,love these,-2.859332
+risk_decreasing,large,-2.855735
+risk_decreasing,problems,-2.803034
+risk_decreasing,simple,-2.7914093
+risk_decreasing,ok,-2.6858141
+risk_decreasing,review worked,-2.6409893
+risk_decreasing,and works,-2.59619
+risk_decreasing,works just,-2.577287
+risk_decreasing,happy,-2.5536876
+risk_decreasing,fits great,-2.54301
+risk_decreasing,as intended,-2.5085514
+risk_decreasing,frothing,-2.4926536
+risk_decreasing,well made,-2.4679713
+risk_decreasing,oven,-2.4232194
+risk_decreasing,so easy,-2.4035056
+risk_decreasing,intended,-2.3824716
+risk_decreasing,new,-2.3649335
+risk_decreasing,cheaper,-2.3158567
+risk_decreasing,the handle,-2.2869167
+risk_decreasing,made,-2.2717357
+risk_decreasing,life,-2.2139902
+risk_decreasing,original,-2.2000916
+risk_decreasing,beat,-2.1917217
+risk_decreasing,needed,-2.1758556
+risk_decreasing,into the,-2.1507103
+risk_decreasing,simple and,-2.139888
+risk_decreasing,tastes,-2.0911279
+risk_decreasing,these and,-2.0803075
+risk_decreasing,filters great,-2.073765
+risk_decreasing,looks good,-2.066163
+risk_decreasing,and not,-2.0606048
+risk_decreasing,and fit,-2.0600173
+risk_decreasing,exact,-2.047388
+risk_decreasing,good product,-2.0461352
+risk_decreasing,works good,-2.0383568
+risk_decreasing,shipping,-2.0335128
+risk_decreasing,review fast,-2.0325835
+risk_decreasing,came,-2.0036066
+risk_decreasing,charcoal,-2.003462
+risk_decreasing,with my,-1.9925711

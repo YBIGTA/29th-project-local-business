@@ -1,0 +1,21 @@
+{
+  "stage": "5_of_8",
+  "goal": "월 평균에 묻히는 강한 개별 리뷰를 별도 위험도로 만들고 상품×월로 집계",
+  "method": {
+    "model": "character n-gram logistic regression",
+    "weak_supervision": "상품×월 라벨을 같은 달 리뷰에 부여",
+    "anti_volume_bias": "월별 최근 최대 8개 리뷰 + 월 균등 sample weight",
+    "test_data_used": false
+  },
+  "selected_monthly_signal": "review_risk_mean",
+  "selected_signal_valid_pr_auc": 0.175878,
+  "review_level_rows_valid": 86235,
+  "monthly_rows_valid": 7228,
+  "outputs": {
+    "monthly_signals": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/review_importance_signals_valid.parquet",
+    "signal_metrics": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/review_importance_signal_metrics.csv",
+    "top_evidence_reviews": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/review_level_top_evidence_valid.parquet",
+    "all_valid_review_scores": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/review_level_raw_risk_valid.parquet"
+  },
+  "elapsed_seconds": 55.68
+}

@@ -1,0 +1,15 @@
+{
+  "stage": "7S_text_rating_mismatch",
+  "test_data_used": false,
+  "definition": "원문 텍스트 위험도 - S45 정형 상태로 예상한 텍스트 위험도",
+  "s45_feature_source": "root.S45_structured_only",
+  "best_candidate": "S45_positive_excess_w25",
+  "best_valid_pr_auc": 0.24151,
+  "s45_valid_pr_auc": 0.228755,
+  "best_pr_auc_delta_vs_s45": 0.012756,
+  "expected_text_risk_valid_r2": 0.395972,
+  "expected_text_risk_valid_mae": 0.047039,
+  "eligible_rule": "S45 대비 PR-AUC +0.003 이상",
+  "eligible": true,
+  "elapsed_seconds": 2.71
+}

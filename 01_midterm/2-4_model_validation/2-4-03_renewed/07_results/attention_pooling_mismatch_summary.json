@@ -1,0 +1,21 @@
+{
+  "stage": "7T_of_8",
+  "method": "NARRE-inspired non-neural attention pooling: 개별 리뷰의 현재 저평점 텍스트 위험도를 여러 attention 강도로 집계하고, 미래 급증 라벨은 상품×월 단위에서만 학습",
+  "test_data_used": false,
+  "train_months": 54813,
+  "valid_months": 7228,
+  "train_reviews": 711183,
+  "valid_reviews": 86235,
+  "attention_alphas": [
+    0.0,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "attention_feature_count": 30,
+  "best_candidate": "S45_positive_excess_w25",
+  "best_pr_auc_delta_vs_s45": 0.012756,
+  "selection_note": "같은 Valid 탐색 결과이므로 최종 채택 전 시간 롤링 재측정이 필요",
+  "elapsed_seconds": 117.08
+}
