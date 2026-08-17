@@ -20,3 +20,11 @@ _send/
 *.pdf
 docs/*.docx
 amazon_project_parquet*
+
+# 재생성 가능한 텍스트 캐시
+01_midterm/2-4_model_validation/04_B_text_stability_analysis/month_documents*.parquet
+*.log
+*:Zone.Identifier
+01_midterm/2-4_model_validation/04_B_text_stability_analysis/supervised_text_features.parquet
+_send2/
+data/external/
