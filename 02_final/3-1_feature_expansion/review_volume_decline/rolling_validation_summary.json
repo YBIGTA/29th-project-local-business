@@ -1,0 +1,10 @@
+{
+  "test_data_used": false,
+  "test_period_sealed": "2022-09~2023-02",
+  "fold_count": 4,
+  "mean_structured_pr_auc": 0.26756366722975494,
+  "mean_text_pr_auc": 0.265068758433907,
+  "mean_pr_auc_delta": -0.002494908795847975,
+  "text_wins": 2,
+  "decision": "텍스트 제외"
+}

@@ -1,0 +1,18 @@
+{
+  "target": "is_review_volume_drop_2m",
+  "target_definition": "t+1~t+2 리뷰 합계가 카테고리 보정 기대치의 50% 이하",
+  "model_locked_before_test": true,
+  "text_features_used": false,
+  "train_valid_rows": 23144,
+  "test_rows": 1798,
+  "test_period": "2022-09~2023-01",
+  "test_positive_count": 218,
+  "test_positive_rate": 0.12124582869855395,
+  "test_pr_auc": 0.3801181423201715,
+  "test_roc_auc": 0.760556265242132,
+  "test_recall_at_5pct_alert": 0.20642201834862386,
+  "test_recall_at_10pct_alert": 0.3348623853211009,
+  "test_precision_at_5pct_alert": 0.5056179775280899,
+  "test_precision_at_10pct_alert": 0.40782122905027934,
+  "feature_count": 46
+}

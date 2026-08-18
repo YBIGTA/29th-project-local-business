@@ -1,0 +1,22 @@
+[
+  "caps_ratio_mean",
+  "comparative_flag_rate_p3",
+  "comparative_flag_delta",
+  "any_cause_topic_rate_p3",
+  "time_narrative_flag_delta",
+  "word_count_mean",
+  "time_narrative_flag_rate_p3",
+  "exclaim_count_mean",
+  "topic_incompatibility_rate_p3",
+  "certainty_count_mean",
+  "sentence_count_mean",
+  "topic_incompatibility_delta",
+  "topic_performance_rate_p3",
+  "topic_build_quality_rate_p3",
+  "any_consequence_topic_rate_p3",
+  "emotional_flag_delta",
+  "topic_durability_failure_delta",
+  "any_cause_topic_delta",
+  "text_reliability",
+  "time_narrative_flag_rate_t_shrunk"
+]

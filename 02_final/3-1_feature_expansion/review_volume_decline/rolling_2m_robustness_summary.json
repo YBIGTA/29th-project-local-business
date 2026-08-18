@@ -1,0 +1,11 @@
+{
+  "target": "is_review_volume_drop_2m",
+  "definition": "t+1~t+2 리뷰 합계 <= 카테고리 보정 2개월 기대치의 50%",
+  "test_data_used": false,
+  "test_period_sealed": "2022-09~2023-01",
+  "rows": 24942,
+  "positive_count": 2976,
+  "positive_rate": 0.11931681501082511,
+  "mean_rolling_pr_auc": 0.2837406596865258,
+  "mean_rolling_roc_auc": 0.7162569614075859
+}

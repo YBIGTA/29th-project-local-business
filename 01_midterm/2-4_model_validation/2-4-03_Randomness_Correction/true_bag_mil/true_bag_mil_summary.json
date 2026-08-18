@@ -1,0 +1,9 @@
+{
+  "experiment": "true_bag_sigmoid_attention_mil_ablation",
+  "test_data_used": false,
+  "valid_S45_raw_stack_pr_auc": 0.3374470166537214,
+  "valid_S45_raw_MIL_stack_pr_auc": 0.3409867769806667,
+  "MIL_increment_over_fair_baseline": 0.003539760326945307,
+  "selection_threshold_pr_auc": 0.003,
+  "decision": "adopt_MIL"
+}

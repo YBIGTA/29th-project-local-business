@@ -1,0 +1,33 @@
+{
+  "experiment": "2-4-03_Hybrid_Raw_Strong_Cluster",
+  "target": "is_review_volume_drop_2m",
+  "raw_text_policy": "모든 리뷰의 원문 TF-IDF를 항상 보존",
+  "cluster_policy": "HDBSCAN 군집 중심과 cluster별 강한 cosine 임계값을 넘은 리뷰에만 semantic cluster 피처 추가",
+  "noise_policy": "잡음·애매한 리뷰는 군집에 넣지 않고 원문으로만 사용",
+  "strong_similarity_quantile": 0.7,
+  "minimum_strong_cosine": 0.6,
+  "maximum_context_cluster_share": 0.35,
+  "final_cluster_count": 12,
+  "hdbscan_noise_rate": 0.84796,
+  "mean_month_strong_cluster_coverage": 0.30739113688468933,
+  "mean_specific_strong_cluster_coverage": 0.33330832145269,
+  "mean_semantic_share_in_context": 0.10758689790964127,
+  "valid_pr_auc_by_model": {
+    "S45_plus_adaptive_full_context": 0.3354189172242451,
+    "S45_plus_adaptive_specific_review": 0.3315494034384177,
+    "S45_plus_adaptive_both_texts": 0.3354848139642724
+  },
+  "test_pr_auc_by_model": {
+    "S45_plus_adaptive_full_context": 0.3535459484445408,
+    "S45_plus_adaptive_specific_review": 0.3412288331112124,
+    "S45_plus_adaptive_both_texts": 0.3536565681913885
+  },
+  "selected_model_from_valid": "S45_plus_adaptive_full_context",
+  "test_s45_pr_auc": 0.3354734237163928,
+  "test_selected_model_pr_auc": 0.3535459484445408,
+  "test_delta_vs_s45": 0.018072524728147965,
+  "previous_raw_context_test_pr_auc": 0.353351,
+  "delta_vs_previous_raw_context": 0.00019494844454076565,
+  "selection_threshold": 0.003,
+  "decision": "기존 전체 원문 문맥 모델 유지"
+}

@@ -1,0 +1,21 @@
+{
+  "target": "is_review_volume_drop",
+  "definition": "next_review_count <= 0.5 * category_adjusted_expected_next_review_count",
+  "current_month_min_reviews": 5,
+  "past_3m_min_reviews": 30,
+  "rows": 25315,
+  "products": 1778,
+  "positive_count": 3250,
+  "positive_rate": 0.12838238198696425,
+  "test_rows_sealed": 2171,
+  "test_data_used": false,
+  "feature_count": 46,
+  "train_rows": 20606,
+  "valid_rows": 2538,
+  "train_positive_rate": 0.1319518586819373,
+  "valid_positive_rate": 0.10047281323877069,
+  "valid_pr_auc": 0.269656432831597,
+  "valid_roc_auc": 0.7183066656360311,
+  "valid_recall_at_5pct": 0.1803921568627451,
+  "valid_recall_at_10pct": 0.3137254901960784
+}

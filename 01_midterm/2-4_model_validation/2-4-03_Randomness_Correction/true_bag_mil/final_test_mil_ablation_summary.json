@@ -1,0 +1,9 @@
+{
+  "experiment": "final_test_MIL_ablation",
+  "test_data_used": true,
+  "test_note": "Test was previously inspected for raw-context evaluation; report as MIL augmented comparison, not pristine first-use test.",
+  "test_S45_raw_stack_pr_auc": 0.3541202360975954,
+  "test_S45_raw_MIL_stack_pr_auc": 0.3602019207001819,
+  "MIL_increment_over_S45_raw": 0.006081684602586512,
+  "valid_increment_preselected": 0.003539760326945307
+}
