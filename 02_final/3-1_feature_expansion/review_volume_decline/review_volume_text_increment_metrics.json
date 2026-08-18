@@ -1,0 +1,13 @@
+{
+  "target": "is_review_volume_drop",
+  "test_data_used": false,
+  "train_rows": 20606,
+  "valid_rows": 2538,
+  "text_feature_candidates": 102,
+  "selected_text_feature_count": 20,
+  "structured_valid_pr_auc": 0.269656432831597,
+  "structured_valid_roc_auc": 0.7183066656360311,
+  "structured_plus_text_valid_pr_auc": 0.25849793785762365,
+  "structured_plus_text_valid_roc_auc": 0.7187704516760712,
+  "pr_auc_delta": -0.011158494973973365
+}

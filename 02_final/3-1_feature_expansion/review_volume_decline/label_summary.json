@@ -1,0 +1,12 @@
+{
+  "target": "is_review_volume_drop",
+  "definition": "next_review_count <= 0.5 * category_adjusted_expected_next_review_count",
+  "current_month_min_reviews": 5,
+  "past_3m_min_reviews": 30,
+  "rows": 25315,
+  "products": 1778,
+  "positive_count": 3250,
+  "positive_rate": 0.12838238198696425,
+  "test_rows_sealed": 2171,
+  "test_data_used": false
+}

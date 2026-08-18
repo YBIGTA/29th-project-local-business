@@ -1,0 +1,12 @@
+{
+  "target": "is_review_volume_drop_2m",
+  "test_data_used": false,
+  "test_period_sealed": "2022-09~2023-01",
+  "raw_text_method": "TF-IDF 원문 문맥 점수 + 리뷰별 top-3 hard attention + 평점-텍스트 불일치 + 3개월 변화량",
+  "mean_structured_pr_auc": 0.26323786135977323,
+  "mean_raw_context_pr_auc": 0.22098330987774023,
+  "mean_late_fusion_pr_auc": 0.2615155690973252,
+  "mean_fusion_minus_structured": -0.0017222922624479872,
+  "fusion_wins": 2,
+  "decision": "raw-context 제외"
+}

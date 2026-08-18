@@ -1,0 +1,17 @@
+{
+  "experiment": "2-4-03_Randomness_Correction",
+  "target": "is_review_volume_drop_2m",
+  "split_method": "7-fold year×label stratified random split grouped by parent_asin",
+  "interpretation": "연도 환경을 섞은 미관측 상품 일반화 평가",
+  "same_product_cross_split_count": 0,
+  "structured_feature_count": 46,
+  "full_context_definition": "t월 모든 리뷰 원문을 합친 word 1~2gram 문서 모델",
+  "specific_review_definition": "리뷰별 char 3~5gram 위험도와 top-3 hard attention",
+  "adaptive_weighting": "Train OOF에서 텍스트 신뢰도·불일치·증거 집중도에 따라 행별 가중치 학습",
+  "maximum_text_weight": 0.35,
+  "gate_fit_success": true,
+  "test_s45_pr_auc": 0.3354734237163928,
+  "test_adaptive_fusion_pr_auc": 0.35334652906026576,
+  "test_pr_auc_delta": 0.01787310534387293,
+  "decision": "adaptive_text_pass"
+}

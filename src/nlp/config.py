@@ -11,6 +11,7 @@
   2-3 NLP 텍스트 피처 (이 폴더)
   2-4 모델링 및 설명가능성
 """
+import os
 from pathlib import Path
 
 # ---------------------------------------------------------------
@@ -21,7 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = PROJECT_ROOT / "data" / "raw"
 INTERIM_DIR = PROJECT_ROOT / "data" / "interim"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-REPORT_DIR = PROJECT_ROOT / "01_midterm" / "2-3_nlp_features"
+REPORT_DIR = PROJECT_ROOT / os.getenv("NLP_REPORT_DIR", "01_midterm/2-3_nlp_features")
 
 for directory in (INTERIM_DIR, PROCESSED_DIR, REPORT_DIR):
     directory.mkdir(parents=True, exist_ok=True)
@@ -40,15 +41,25 @@ REVIEWS_CLEAN = _find(
     ["reviews_clean.parquet", "clean_reviews.parquet", "reviews_clean.csv"],
     "2-1 정제 리뷰",
 )
-LABELED_PANEL = _find(
-    ["product_month_labeled.parquet", "product_month_labeled.csv"],
-    "2-1 라벨 패널",
+_panel_override = os.getenv("NLP_LABELED_PANEL_PATH")
+LABELED_PANEL = (
+    PROJECT_ROOT / _panel_override
+    if _panel_override
+    else _find(
+        ["product_month_labeled.parquet", "product_month_labeled.csv"],
+        "2-1 라벨 패널",
+    )
 )
 
 # 2-3 산출물
 CLEAN_REVIEWS = INTERIM_DIR / "clean_reviews.parquet"
 REVIEW_FEATURES = INTERIM_DIR / "review_nlp_features.parquet"
-MONTH_FEATURES = PROCESSED_DIR / "product_month_text_features.parquet"
+_month_features_override = os.getenv("NLP_MONTH_FEATURES_PATH")
+MONTH_FEATURES = (
+    PROJECT_ROOT / _month_features_override
+    if _month_features_override
+    else PROCESSED_DIR / "product_month_text_features.parquet"
+)
 
 DICTIONARY_PATH = Path(__file__).resolve().parent / "complaint_dictionary.json"
 
@@ -74,8 +85,8 @@ SURGE_RATE_THRESHOLD = 0.30
 SURGE_DELTA_THRESHOLD = 0.15
 
 # 시간순 분할. 사전 구축과 임계값 탐색은 train 구간만 보고 해야 한다.
-TRAIN_END = "2020-12"
-VALID_END = "2021-12"
+TRAIN_END = os.getenv("NLP_TRAIN_END", "2020-12")
+VALID_END = os.getenv("NLP_VALID_END", "2021-12")
 
 # 2-1 산출물의 정답 정보. 피처로 절대 쓰지 않는다.
 FUTURE_COLUMNS = (
@@ -85,7 +96,7 @@ FUTURE_COLUMNS = (
     "next_avg_rating",
     "next_vs_past_3m_low_rating_change",
 )
-LABEL_COLUMN = "is_low_rating_surge"
+LABEL_COLUMN = os.getenv("NLP_LABEL_COLUMN", "is_low_rating_surge")
 KEY_COLUMNS = ["parent_asin", "year_month"]
 
 # 2-1 검증 보고서에 기록된 기대값

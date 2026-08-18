@@ -1,0 +1,17 @@
+{
+  "experiment": "2-4-03_phrase_dualview_stable_cluster_burst",
+  "test_data_used": false,
+  "target": "is_review_volume_drop_2m",
+  "split": "existing random grouped Train/Valid only; parent_asin never crosses split",
+  "domain_adaptation": "off (required ablation baseline)",
+  "clustering": "dense MiniLM + sparse TF-IDF mutual-kNN graph; Leiden auto community count; bootstrap stable clusters only",
+  "stable_cluster_count": 21,
+  "raw_leiden_cluster_count": 28,
+  "stable_cluster_coverage_valid": 0.8522008571352317,
+  "valid_raw_full_pr_auc": 0.3339649249582407,
+  "valid_final_pr_auc": 0.3308411648957291,
+  "valid_pr_auc_delta_vs_raw_full": -0.0031237600625115824,
+  "valid_recall10_delta_vs_raw_full": 0.0023529411764705577,
+  "selection_threshold_pr_auc": 0.003,
+  "decision": "keep_raw_full_context"
+}
