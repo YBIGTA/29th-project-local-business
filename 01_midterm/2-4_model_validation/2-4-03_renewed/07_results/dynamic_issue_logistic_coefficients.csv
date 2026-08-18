@@ -1,0 +1,13 @@
+﻿feature,coefficient,abs_coefficient
+p90_review_text_risk,0.5650603,0.5650603
+log_high_rating_review_count,-0.38321897,0.38321897
+log_text_review_count,-0.18105073,0.18105073
+max_review_text_risk,-0.16469307,0.16469307
+hidden_complaint_risk_mean,0.0882702,0.0882702
+hidden_complaint_rate,-0.07391493,0.07391493
+dominant_issue_share,0.057085764,0.057085764
+novel_issue_mass,0.038640924,0.038640924
+issue_concentration,-0.032794632,0.032794632
+has_prior_3m_issue_history,0.027688432,0.027688432
+issue_change_jsd,-0.015675854,0.015675854
+emerging_issue_score,-0.014362742,0.014362742

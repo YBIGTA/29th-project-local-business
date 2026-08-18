@@ -1,0 +1,22 @@
+{
+  "stage": "3_of_8",
+  "purpose": "원문 리뷰를 리뷰 단위와 상품×월 문서 단위로 동시 구성",
+  "uses_fixed_topic_features": false,
+  "uses_s45_features": false,
+  "test_rows_included_as_future_input_only": 6046,
+  "text_source_column": "text_norm",
+  "title_source_column": null,
+  "time_source_column": "review_datetime_utc",
+  "labeled_product_month_rows": 68087,
+  "review_level_rows": 867675,
+  "product_months_with_text": 68085,
+  "mean_text_reviews_per_product_month": 12.7436,
+  "max_text_reviews_per_product_month": 686,
+  "mean_document_chars": 1926.39,
+  "truncated_month_documents": 3357,
+  "key_duplicate_count": 0,
+  "outputs": [
+    "01_midterm/2-4_model_validation/2-4-03_renewed/02_raw_text/review_level_text_events.parquet",
+    "01_midterm/2-4_model_validation/2-4-03_renewed/02_raw_text/product_month_raw_corpus.parquet"
+  ]
+}

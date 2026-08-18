@@ -1,0 +1,4 @@
+﻿candidate,B1_rank,original_text_count,removed_A1_overlap_count,retained_text_count,structured_count,combined_feature_count
+B5_clean_shrunk_change,1,57,0,57,45,102
+B1_clean_shrunk,2,15,0,15,45,60
+B8_no_shrunk,3,72,0,72,45,117

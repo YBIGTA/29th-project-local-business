@@ -1,0 +1,30 @@
+{
+  "test_data_used": false,
+  "train_period": "2016-01~2021-12",
+  "valid_period": "2022-01~2022-08",
+  "excluded_test_period": "2022-09~2023-02",
+  "train_rows": 54813,
+  "valid_rows": 7228,
+  "scale_pos_weight_train_only": 10.416996459071028,
+  "feature_counts": {
+    "structured": 45,
+    "B1": 15,
+    "B5": 57,
+    "B8": 72,
+    "B5_level": 15,
+    "B5_past_p3": 21,
+    "B5_delta": 21,
+    "B5_change_all": 42
+  },
+  "model_training_seconds": {
+    "S45_structured_only": 2.334,
+    "C1_S45_plus_B1": 2.414,
+    "C5_S45_plus_B5": 2.585,
+    "C8_S45_plus_B8": 2.59,
+    "D_S45_plus_past_p3": 2.403,
+    "D_S45_plus_delta": 2.375,
+    "D_S45_plus_change_all": 2.475
+  },
+  "selection_is_final": false,
+  "next_required_check": "rolling time validation"
+}

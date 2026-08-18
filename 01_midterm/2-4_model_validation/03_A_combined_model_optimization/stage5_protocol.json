@@ -1,0 +1,36 @@
+{
+  "test_data_used": false,
+  "train_period": "2016-01~2021-12",
+  "official_valid_period": "2022-01~2022-08",
+  "test_period_excluded": "2022-09~2023-02",
+  "oof_folds": [
+    {
+      "fold": "oof_2019",
+      "train_end": "2018-12",
+      "valid_start": "2019-01",
+      "valid_end": "2019-12"
+    },
+    {
+      "fold": "oof_2020",
+      "train_end": "2019-12",
+      "valid_start": "2020-01",
+      "valid_end": "2020-12"
+    },
+    {
+      "fold": "oof_2021",
+      "train_end": "2020-12",
+      "valid_start": "2021-01",
+      "valid_end": "2021-12"
+    }
+  ],
+  "text_blocks": {
+    "change_all": "B5의 past_p3 21개와 delta 21개",
+    "B8": "축소추정을 사용하지 않는 텍스트 72개"
+  },
+  "fusion_methods": [
+    "Train OOF에서 선택한 가중평균",
+    "Train OOF 예측으로 학습한 로지스틱 스태킹"
+  ],
+  "valid_used_for_weight_selection": false,
+  "selection_is_final": false
+}

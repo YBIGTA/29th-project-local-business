@@ -1,0 +1,60 @@
+{
+  "stage": "4_of_8",
+  "goal": "고정 토픽 사전 없이 원문 리뷰만으로 다음 달 저평점 급증 위험을 학습",
+  "input": "01_midterm/2-4_model_validation/2-4-03_renewed/02_raw_text/product_month_raw_corpus.parquet",
+  "split": {
+    "train": 54813,
+    "valid": 7228,
+    "test_used": false
+  },
+  "selected_model": "char_ngram_raw_text",
+  "selected_valid_pr_auc": 0.18218,
+  "models_compared": [
+    {
+      "model_name": "char_ngram_raw_text",
+      "pr_auc": 0.182179614887467,
+      "roc_auc": 0.6109486006522645,
+      "recall_at_5pct": 0.08244111349036402,
+      "recall_at_10pct": 0.16916488222698073,
+      "feature_count": 103151,
+      "training_rows": 54813,
+      "valid_rows": 7228,
+      "uses_fixed_topic_features": false,
+      "uses_s45_features": false,
+      "uses_test_data": false
+    },
+    {
+      "model_name": "word_ngram_raw_text",
+      "pr_auc": 0.1793951155479564,
+      "roc_auc": 0.6185236236679643,
+      "recall_at_5pct": 0.07708779443254818,
+      "recall_at_10pct": 0.16274089935760172,
+      "feature_count": 120000,
+      "training_rows": 54813,
+      "valid_rows": 7228,
+      "uses_fixed_topic_features": false,
+      "uses_s45_features": false,
+      "uses_test_data": false
+    },
+    {
+      "model_name": "word_char_ngram_raw_text",
+      "pr_auc": 0.17342582192900646,
+      "roc_auc": 0.5976801263430928,
+      "recall_at_5pct": 0.08886509635974305,
+      "recall_at_10pct": 0.14775160599571735,
+      "feature_count": 223151,
+      "training_rows": 54813,
+      "valid_rows": 7228,
+      "uses_fixed_topic_features": false,
+      "uses_s45_features": false,
+      "uses_test_data": false
+    }
+  ],
+  "outputs": {
+    "metrics": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/raw_text_model_comparison.csv",
+    "valid_predictions": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/raw_text_valid_predictions.parquet",
+    "top_word_ngrams": "01_midterm/2-4_model_validation/2-4-03_renewed/07_results/raw_text_word_ngrams.csv",
+    "selected_model": "01_midterm/2-4_model_validation/2-4-03_renewed/02_raw_text/models/char_ngram_raw_text_model.joblib"
+  },
+  "elapsed_seconds": 502.04
+}

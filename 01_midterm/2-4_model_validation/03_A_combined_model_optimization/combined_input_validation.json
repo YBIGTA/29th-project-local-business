@@ -1,0 +1,23 @@
+{
+  "validation": "passed",
+  "test_data_used": false,
+  "rows": 62041,
+  "unique_products": 6050,
+  "key_duplicate_count": 0,
+  "split_counts": {
+    "train": 54813,
+    "valid": 7228
+  },
+  "label_positive_count": 5735,
+  "label_positive_rate": 0.092439,
+  "structured_feature_count": 45,
+  "candidate_text_union_before_overlap_check": 87,
+  "A1_overlap_duplicate_count": 0,
+  "A1_overlap_duplicate_features": [],
+  "candidate_text_union_after_overlap_check": 87,
+  "forbidden_feature_count": 0,
+  "text_label_mismatch_count": 0,
+  "clip_rules": {
+    "ttf_median_days": 730.0
+  }
+}

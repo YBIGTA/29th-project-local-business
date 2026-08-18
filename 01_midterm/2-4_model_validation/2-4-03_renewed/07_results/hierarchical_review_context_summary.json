@@ -1,0 +1,14 @@
+{
+  "stage": "7_revised_hierarchical_context",
+  "test_data_used": false,
+  "document_context_definition": "t월의 모든 원문 리뷰 TF-IDF 벡터를 상품×월 단위로 합산한 전체 문맥",
+  "individual_evidence_definition": "리뷰별 원문 위험도에 attention pooling을 적용한 개별 사례 신호",
+  "text_inputs_use_star_rating": false,
+  "best_candidate": "S45_hierarchical_context50_textw25",
+  "best_valid_pr_auc": 0.236115,
+  "s45_valid_pr_auc": 0.228755,
+  "best_pr_auc_delta_vs_s45": 0.00736,
+  "eligible_rule": "S45 대비 PR-AUC +0.003 이상",
+  "eligible": true,
+  "elapsed_seconds": 187.69
+}

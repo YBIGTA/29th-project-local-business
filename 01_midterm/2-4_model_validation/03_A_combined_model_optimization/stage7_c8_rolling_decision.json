@@ -1,0 +1,19 @@
+{
+  "test_data_used": false,
+  "final_candidate_before_test": "C8_S45_plus_B8",
+  "comparison_baseline": "S45_structured_only",
+  "feature_count": 117,
+  "intensity_features": "excluded_after_valid_screen",
+  "rolling_windows": [
+    "2019",
+    "2020",
+    "2021",
+    "2022-01~08"
+  ],
+  "mean_pr_auc_delta": -0.0036122944809610577,
+  "pr_auc_win_count": 1,
+  "required_pr_auc_wins": 3,
+  "passed_rolling_stability": false,
+  "next_step": "do_not_open_test; lock_s45_structured_only",
+  "elapsed_seconds": 18.63
+}
