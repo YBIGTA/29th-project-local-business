@@ -1,0 +1,8 @@
+{
+  "prediction_file": "01_midterm/2-4_model_validation/2-4-03_Randomness_Correction/true_bag_mil/final_test_mil_predictions.parquet",
+  "rows_ranked": 3563,
+  "risk_score": "s45_raw_mil_score",
+  "confidence": "0.5 × 모델 일치도(S45+Raw 대비 MIL 결합 점수 차이) + 0.5 × 리뷰 근거 충분성",
+  "priority_formula": "위험도 × 리뷰 활동 규모 × 상대 가격 보정 × 운영 신뢰도",
+  "interpretation": "판매액 추정이 아니라, 제한된 점검 자원을 어디에 먼저 배분할지 결정하기 위한 운영 우선순위"
+}

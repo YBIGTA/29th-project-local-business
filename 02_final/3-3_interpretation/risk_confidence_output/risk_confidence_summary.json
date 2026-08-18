@@ -1,0 +1,8 @@
+{
+  "rows": 3563,
+  "risk_score": "S45 + Raw Full Context + Bag-level MIL stacking score",
+  "review_evidence_confidence": "현재 리뷰 수 / (현재 리뷰 수 + 10)",
+  "model_consistency_confidence": "exp(-4 × |MIL 결합 점수 - S45+Raw 기준 점수|)",
+  "operational_confidence": "0.7 × 리뷰 근거 충분성 + 0.3 × 모델 일관성",
+  "caution": "운영 신뢰도는 예측 확률의 통계적 보정값이 아니라, 리뷰 근거량과 모델 점수 안정성을 조합한 점검용 신뢰도다."
+}
