@@ -235,7 +235,7 @@ def get_evidence_reviews(
 
 
 # ============================================
-# 8. GET /products/{asin}/risk-explanation : 위험 판단 근거 (SHAP 변수/기여도)
+# 8. GET /products/{asin}/risk-explanation : 위험 판단 근거 
 # ============================================
 @app.get("/products/{asin}/risk-explanation")
 def get_risk_explanation(asin: str, year_month: Optional[str] = None):
@@ -249,7 +249,7 @@ def get_risk_explanation(asin: str, year_month: Optional[str] = None):
 
         if year_month is None:
             return {"parent_asin": asin, "year_month": None, "explanations": [],
-                    "note": "아직 SHAP 결과가 없습니다"}
+                    "note": "위험 판단 근거 데이터가 없습니다"}
 
         query = text("""
             SELECT feature_name, contribution
@@ -263,5 +263,61 @@ def get_risk_explanation(asin: str, year_month: Optional[str] = None):
         "parent_asin": asin,
         "year_month": year_month,
         "explanations": [dict(r) for r in rows],
-        "note": "현재는 모델 전역 피처 중요도이며, 상품별 SHAP 값이 아닙니다. 3-3 완료 후 교체 예정입니다.",
+    }
+
+# ============================================
+# 9. GET /products/risk-changes : 전월 대비 위험도 변화
+# ============================================
+@app.get("/products/risk-changes")
+def get_risk_changes(
+    year_month: Optional[str] = None,
+    limit: int = 20,
+    high_risk_threshold: float = 0.7,
+):
+    with engine.connect() as conn:
+        if year_month is None:
+            latest = conn.execute(text("SELECT MAX(`year_month`) as ym FROM product_month_risk")).mappings().first()
+            year_month = latest["ym"]
+
+        prev_month = conn.execute(
+            text("""SELECT MAX(`year_month`) as ym FROM product_month_risk
+                     WHERE `year_month` < :ym"""),
+            {"ym": year_month}
+        ).mappings().first()
+        prev_ym = prev_month["ym"] if prev_month else None
+
+        query = text("""
+            SELECT
+                cur.parent_asin, p.product_title, p.store,
+                cur.risk_probability AS current_risk,
+                prev.risk_probability AS previous_risk,
+                (cur.risk_probability - prev.risk_probability) AS risk_change
+            FROM product_month_risk cur
+            JOIN products p ON cur.parent_asin = p.parent_asin
+            LEFT JOIN product_month_risk prev
+                ON cur.parent_asin = prev.parent_asin AND prev.`year_month` = :prev_ym
+            WHERE cur.`year_month` = :ym
+            ORDER BY risk_change DESC
+            LIMIT :limit
+        """)
+        rows = conn.execute(query, {"ym": year_month, "prev_ym": prev_ym, "limit": limit}).mappings().all()
+
+        cur_high = conn.execute(
+            text("""SELECT COUNT(*) as cnt FROM product_month_risk
+                     WHERE `year_month` = :ym AND risk_probability >= :th"""),
+            {"ym": year_month, "th": high_risk_threshold}
+        ).mappings().first()["cnt"]
+        prev_high = conn.execute(
+            text("""SELECT COUNT(*) as cnt FROM product_month_risk
+                     WHERE `year_month` = :ym AND risk_probability >= :th"""),
+            {"ym": prev_ym, "th": high_risk_threshold}
+        ).mappings().first()["cnt"] if prev_ym else None
+
+    return {
+        "year_month": year_month,
+        "previous_year_month": prev_ym,
+        "high_risk_count_current": cur_high,
+        "high_risk_count_previous": prev_high,
+        "high_risk_count_change": (cur_high - prev_high) if prev_high is not None else None,
+        "products": [dict(r) for r in rows],
     }
