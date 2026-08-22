@@ -58,6 +58,8 @@ h1 { font-size: 30px !important; font-weight: 700 !important; }
 </style>
 """, unsafe_allow_html=True)
 
+st.logo("assets/amazon_logo.png", size="large")
+
 st.title("위험 리포트")
 st.caption("Appliances")
 
