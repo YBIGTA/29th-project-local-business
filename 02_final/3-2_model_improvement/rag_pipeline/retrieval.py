@@ -197,7 +197,7 @@ def get_product_context(asin: str, year_month: str | None = None) -> dict:
     evidence_raw = evidence_res.json().get("reviews", []) if evidence_res else []
     evidence_reviews = annotate_evidence_reviews(evidence_raw)
 
-    # 4. 위험 판단 근거 변수 (현재는 S45 모델 전역 중요도, 상품별 SHAP 아님 - main.py의 note 참고)
+    # 4. 위험 판단 근거 변수 (통계 기반 근사치 — 상품별 백분위 기여도, 진짜 SHAP은 아님. main.py 참고)
     explanation_res = _request_with_retry(f"{API_BASE_URL}/products/{asin}/risk-explanation", shared_params)
     risk_explanation = explanation_res.json() if explanation_res else {"explanations": [], "note": "조회 실패"}
 
