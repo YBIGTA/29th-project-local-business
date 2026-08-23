@@ -1,0 +1,11 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir \
+    pandas==3.0.5 \
+    pyarrow==25.0.1 \
+    SQLAlchemy==2.0.52 \
+    PyMySQL==1.2.0
+
+CMD ["python", "02_final/3-1_feature_expansion/mysql_fastapi/load_data_v2.py"]

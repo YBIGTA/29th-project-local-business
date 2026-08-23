@@ -10,7 +10,8 @@ import streamlit as st
 
 # Docker Compose로 묶을 때는 "http://backend:8000" 처럼
 # 서비스 이름으로 바뀔 수 있음. 지금은 로컬 개발 기준.
-API_BASE_URL = "http://localhost:8000"
+import os
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 
 def _get(path: str, params: dict | None = None):
