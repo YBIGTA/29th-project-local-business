@@ -117,7 +117,7 @@ def format_context_for_prompt(context: dict) -> str:
 
     # --- 위험 판단 근거 변수 ---
     explanation = context.get("risk_explanation", {})
-    lines.append("## Variables Influencing Risk Prediction (model-wide, not product-specific)")
+    lines.append("## Variables Influencing Risk Prediction (approximate, based on percentile rank across products)")
     for e in explanation.get("explanations", [])[:5]:
         lines.append(f"- {e['feature_name']}")
     if explanation.get("note"):
@@ -168,8 +168,8 @@ def build_system_prompt() -> str:
   "표본이 적어 참고용"이라는 취지를 언급합니다. 그런 노트가 없다면 참고용이라는 말을 쓰지
   않습니다. 이 문장에는 모델/변수 관련 단서를 붙이지 않습니다.
 - 위험 판단 근거 변수: "Variables Influencing Risk Prediction" 목록에 있는 변수명을
-  그대로 나열하고, 반드시 "이는 이 상품만의 개별 이유가 아니라 모델이 일반적으로 중요하게
-  보는 변수"라는 단서를 이 항목 안에서만 붙입니다. 이 단서를 위 두 항목에 붙이지 않습니다.
+  그대로 나열하고, 반드시 "이 값은 각 변수를 상품 간 상대적 위치(백분위)로 환산한 근사 지표이며, 
+  모델의 실제 판단 근거는 아니다"라는 단서를 이 항목 안에서만 붙입니다. 이 단서를 위 두 항목에 붙이지 않습니다.
 
 [근거 리뷰]
 실제 리뷰 원문을 짧게 인용하여 핵심 원인을 뒷받침합니다. 리뷰는 영어 원문을 그대로 인용합니다.

@@ -27,11 +27,23 @@ engine = create_engine(
 # ============================================
 # 파일 경로 
 # ============================================
-PRODUCTS_META_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\interim\products_meta_clean.parquet"
-REVIEWS_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\reviews_clean.parquet"
-TEXT_FEATURES_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\processed\product_month_text_features.parquet"
-VOLUME_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\processed\product_month_review_volume_2m_labeled.parquet"
-RISK_CONFIDENCE_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\02_final\3-3_interpretation\risk_confidence_output\product_month_risk_confidence.parquet"
+
+# 임시 경로 수정
+# PRODUCTS_META_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\interim\products_meta_clean.parquet"
+# REVIEWS_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\reviews_clean.parquet"
+# TEXT_FEATURES_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\processed\product_month_text_features.parquet"
+# VOLUME_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\data\processed\product_month_review_volume_2m_labeled.parquet"
+# RISK_CONFIDENCE_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\amazon_3_1_data_04\02_final\3-3_interpretation\risk_confidence_output\product_month_risk_confidence.parquet"
+
+PRODUCTS_META_PATH = "data/interim/products_meta_clean.parquet"
+REVIEWS_PATH = "data/processed/reviews_clean.parquet"
+TEXT_FEATURES_PATH = "data/processed/product_month_text_features.parquet"
+VOLUME_PATH = "data/processed/product_month_review_volume_2m_labeled.parquet"
+RISK_CONFIDENCE_PATH = "02_final/3-3_interpretation/risk_confidence_output/product_month_risk_confidence.parquet"
+
+MATCHING_RULES_DIR = "02_final/3-1_feature_expansion/mysql_fastapi"
+COMPLAINT_DICT_PATH = "02_final/3-1_feature_expansion/mysql_fastapi/complaint_dictionary.json"
+importance_path = "02_final/3-3_interpretation/stat_explanations.csv"
 
 # ============================================
 # 1. products 적재
@@ -144,11 +156,13 @@ import json
 import sys
 
 # matching_rules.py 파일 위치를 파이썬이 찾을 수 있게 경로 추가
-MATCHING_RULES_DIR = rMATCHING_RULES_DIR = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files"
+# 임시 경로 수정
+# MATCHING_RULES_DIR = rMATCHING_RULES_DIR = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files"
 sys.path.insert(0, MATCHING_RULES_DIR)
 from matching_rules import count_terms   # 부정문·다의어까지 처리하는 원본 매칭 함수
 
-COMPLAINT_DICT_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files\complaint_dictionary.json"
+# 임시 경로 수정
+# COMPLAINT_DICT_PATH = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files\complaint_dictionary.json"
 with open(COMPLAINT_DICT_PATH, encoding="utf-8") as f:
     complaint_dict = json.load(f)
 
@@ -185,36 +199,24 @@ print(f"   -> {len(evidence_for_db)}행 적재 완료 (전체 리뷰 중 1~2점�
 
 
 # ============================================
-# 6. risk_explanations : 구조만 생성 (SHAP 결과 나오면 추후 적재)
+# 6. risk_explanations : 통계 기반 근사 설명 적재
 # ============================================
+
+# ⚠️ 참고: 상품별 SHAP 대신, 각 정형 변수 값이 전체 상품 분포에서
+# 몇 백분위(0~100)에 위치하는지를 근사 기여도로 사용한다.
+# 상품·월마다 값이 다르지만, 모델이 실제로 그 변수를 어떻게 판단했는지를
+# 보여주는 SHAP은 아니다. (compute_stat_explanations.py 참고)
+
 print("6. risk_explanations 적재 중...")
 
-# ⚠️ 주의: 아직 상품별 SHAP 결과가 없어서, 대신 S45 모델의
-# "전역 피처 중요도"(이 모델 전체에서 어떤 변수가 중요한지)를 임시로 채워 넣는다.
-# 상품마다 다른 진짜 SHAP 기여도가 아니라, 모든 상품×월에 동일한 값이 들어간다.
-# 3-3 단계에서 진짜 SHAP 결과가 나오면 이 값들을 교체해야 한다.
-
-importance_path = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files\standard_candidate_importance.csv"
-importance = pd.read_csv(importance_path)
-
-s45_importance = importance[importance["model_name"] == "S45_structured_only"].copy()
-top_features = s45_importance.sort_values("importance_gain", ascending=False).head(10)
-
-# product_month_risk에 있는 상품x월 조합마다, 동일한 top10 피처 중요도를 매칭
-risk_keys = risk_for_db[["parent_asin", "year_month"]].drop_duplicates()
-
-explanations_rows = []
-for _, feat_row in top_features.iterrows():
-    temp = risk_keys.copy()
-    temp["feature_name"] = feat_row["feature_name"]
-    temp["contribution"] = feat_row["importance_gain"]
-    explanations_rows.append(temp)
-
-explanations_for_db = pd.concat(explanations_rows, ignore_index=True)
+# 임시 경로 수정
+# importance_path = r"C:\Users\lucy0\Documents\YONSEI\YBIGTA\신기플\amazon_3_1_data\3_1_files\standard_candidate_importance.csv"
+explanations_for_db = pd.read_csv(importance_path)
+explanations_for_db = explanations_for_db[explanations_for_db["parent_asin"].isin(valid_asins)]
 
 explanations_for_db.to_sql(
     "risk_explanations", con=engine, if_exists="append", index=False, chunksize=5000
 )
-print(f"   -> {len(explanations_for_db)}행 적재 완료 (전역 피처 중요도 기준, 상품별 SHAP 아님)")
+print(f"   -> {len(explanations_for_db)}행 적재 완료")
 
 print("\n전체 적재 완료!")
