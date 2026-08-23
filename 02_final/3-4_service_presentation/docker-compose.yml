@@ -1,0 +1,61 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: amazon_db
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../3-1_feature_expansion/mysql_fastapi/schema_v2.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 40s
+
+  loader:
+    build:
+      context: ../..
+      dockerfile: 02_final/3-4_service_presentation/docker/Dockerfile.loader
+    container_name: amazon_loader
+    env_file: .env
+    volumes:
+      - ../../data:/app/data:ro
+      - ../3-1_feature_expansion/mysql_fastapi:/app/02_final/3-1_feature_expansion/mysql_fastapi:ro
+      - ../3-3_interpretation:/app/02_final/3-3_interpretation:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["init"]
+
+  backend:
+    build:
+      context: ../..
+      dockerfile: 02_final/3-4_service_presentation/docker/Dockerfile.backend
+    container_name: amazon_backend
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  dashboard:
+    build:
+      context: ../..
+      dockerfile: 02_final/3-4_service_presentation/docker/Dockerfile.dashboard
+    container_name: amazon_dashboard
+    env_file: .env
+    depends_on:
+      - backend
+    ports:
+      - "8501:8501"
+
+volumes:
+  mysql_data:

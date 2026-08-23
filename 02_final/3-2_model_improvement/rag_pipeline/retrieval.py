@@ -16,7 +16,8 @@ v3에서 추가된 것:
 import time
 import requests
 
-API_BASE_URL = "http://localhost:8000"
+import os
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 REQUEST_TIMEOUT = 10        # 초. 서버가 이 시간 안에 응답 안 하면 실패 처리
 MAX_RETRIES = 3             # 실패 시 최대 재시도 횟수

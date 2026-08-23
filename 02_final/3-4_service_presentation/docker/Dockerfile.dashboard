@@ -1,0 +1,21 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir \
+    streamlit==1.62.0 \
+    plotly==6.9.0 \
+    requests==2.34.2 \
+    pandas==3.0.5 \
+    SQLAlchemy==2.0.52 \
+    PyMySQL==1.2.0 \
+    openai==3.3.1 \
+    python-dotenv==1.2.3
+
+COPY 02_final/3-2_model_improvement/rag_pipeline/ /app/02_final/3-2_model_improvement/rag_pipeline/
+COPY 02_final/3-3_interpretation/dashboard/ /app/02_final/3-3_interpretation/dashboard/
+
+WORKDIR /app/02_final/3-3_interpretation/dashboard
+
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
