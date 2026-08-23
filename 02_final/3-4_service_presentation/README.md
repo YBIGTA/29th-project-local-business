@@ -54,12 +54,14 @@ dashboard (8501)  ── HTTP ──▶  backend (8000)  ── SQL ──▶  d
 용량 문제로 Git에 포함되지 않은 아래 파일들을 저장소 루트 기준 경로에 배치한다.
 (3-1 담당자가 전달한 `amazon_3_1_data_01~04.zip` 압축 해제 후 복사)
 
+```
 data/interim/products_meta_clean.parquet
 data/processed/reviews_clean.parquet
 data/processed/product_month_text_features.parquet
 data/processed/product_month_review_volume_2m_labeled.parquet
 02_final/3-3_interpretation/risk_confidence_output/product_month_risk_confidence.parquet
 02_final/3-3_interpretation/stat_explanations.csv
+```
 
 
 리뷰 원문은 세 조각으로 분할 전달되므로 합쳐야 한다.
@@ -179,6 +181,32 @@ Git에 없어서 실행자가 별도로 받아야 하므로, 이미지에 포함
 `depends_on`만으로는 컨테이너가 "시작"된 시점만 보장하고 MySQL이 접속을 받을 준비가
 되었는지는 알 수 없다. `mysqladmin ping` 기반 healthcheck와 `condition: service_healthy`를
 함께 지정해, `loader`와 `backend`가 DB 준비 완료 후에 실행되도록 했다.
+
+## 동작 확인
+
+세 컨테이너를 모두 기동한 상태에서 아래를 확인했다.
+
+| 확인 항목 | 결과 |
+|---|---|
+| `GET /health` | `{"status":"ok","db_connected":true}` |
+| 대시보드 홈 | 백엔드 연결 상태 정상 (`http://backend:8000`) |
+| Overview | KPI·위험 등급 분포·급상승 상품·상품 목록 정상 렌더링 |
+| Product Detail | KPI·월별 추이·불만 토픽·근거 리뷰 정상 조회 |
+| RAG Report | 5개 질문 유형 리포트 생성 정상 |
+
+적재된 행 수는 3-1 README의 명세와 일치한다.
+
+| 테이블 | 행 수 |
+|---|---|
+| products | 94,327 |
+| product_month_metrics | 24,942 |
+| product_month_risk | 3,563 |
+| product_month_topics | 817,044 |
+| evidence_reviews | 284,775 |
+| risk_explanations | 349,188 |
+
+`risk_explanations`는 3-1 README 기준(35,630)과 다른데, 3-3에서 전역 피처 중요도를
+상품·월별 근사 기여도(`stat_explanations.csv`)로 교체하면서 늘어난 값이다.
 
 ## 트러블슈팅
 
